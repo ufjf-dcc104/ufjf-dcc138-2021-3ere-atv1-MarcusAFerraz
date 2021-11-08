@@ -18,6 +18,8 @@
         canvas.height = 320;
         let x = 150;
         let y = 100
+        let x1 = 100;
+        let y1 = 50;
         let a = 0;
         let t0;
         let dt;
@@ -36,10 +38,15 @@
             a = a + 2*Math.PI*dt;
             x = 100 + 100*Math.cos(a);
             
-            
+            x1 = x1 + 10*dt;
+            y1 = 100 + 100*Math.cos(a);
+
             //Desenha elementos
             ctx.fillStyle = "white";
             ctx.fillRect(x, y, 20, 20);
+
+            ctx.fillStyle = "red";
+            ctx.fillRect(x1, y1, 20, 20);
 
             requestAnimationFrame(desenha);
             t0 = t;
